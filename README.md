@@ -37,12 +37,12 @@ Project 5 - Imagine a quote generator. Generate Random Quotes & Configurable Quo
   * Brackets Editor
   
 ## Sources:
-    * https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript
-	* https://www.grafikart.fr/formations/debuter-javascript
-	* https://openclassrooms.com/fr/courses/1631636-simplifiez-vos-developpements-javascript-avec-jquery/1631981-premiers-pas
-	* https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/3514956-manipulez-les-formulaires
-	* https://openclassrooms.com/fr/courses/3504441-introduction-a-jquery 
-	* https://openclassrooms.com/fr/courses/1631636-simplifiez-vos-developpements-javascript-avec-jquery/1631981-premiers-pas
-	* https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0
-	* https://kangax.github.io/compat-table/es6/
+  * https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript
+  * https://www.grafikart.fr/formations/debuter-javascript
+  * https://openclassrooms.com/fr/courses/1631636-simplifiez-vos-developpements-javascript-avec-jquery/1631981-premiers-pas
+  * https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/3514956-manipulez-les-formulaires
+  * https://openclassrooms.com/fr/courses/3504441-introduction-a-jquery 
+  * https://openclassrooms.com/fr/courses/1631636-simplifiez-vos-developpements-javascript-avec-jquery/1631981-premiers-pas
+  * https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0
+  * https://kangax.github.io/compat-table/es6/
 
