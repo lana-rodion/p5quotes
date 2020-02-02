@@ -33,9 +33,9 @@ Project 5 - Imagine a quote generator. Generate Random Quotes & Configurable Quo
   
 * The project is realized independently for the Front-end Developer Training
 
-## Tools : 
+* Tools : 
   * Brackets Editor
-  
+
 ## Sources:
   * https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript
   * https://www.grafikart.fr/formations/debuter-javascript
@@ -45,4 +45,5 @@ Project 5 - Imagine a quote generator. Generate Random Quotes & Configurable Quo
   * https://openclassrooms.com/fr/courses/1631636-simplifiez-vos-developpements-javascript-avec-jquery/1631981-premiers-pas
   * https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0
   * https://kangax.github.io/compat-table/es6/
+
 
