@@ -43,6 +43,9 @@ const data = {
 	]
 };
 
+function getCapitalizeFirstLetter(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 // Create quote text from data
 function generatorRandomQuote() {
@@ -51,7 +54,7 @@ function generatorRandomQuote() {
 	var center = data.quotesCenter[Math.floor(Math.random() * data.quotesCenter.length)];
 	var finish = data.quotesFinish[Math.floor(Math.random() * data.quotesFinish.length)];
 
-	var phrase = start + " " + center + " " + finish + ".";
+	var phrase = getCapitalizeFirstLetter(start) + " " + center + " " + finish + ".";
 	console.log(phrase);
 }
 
