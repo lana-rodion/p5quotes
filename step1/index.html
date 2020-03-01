@@ -6,41 +6,59 @@
 	<meta name="viewport" content="width = device-width, initial-scale = 1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Générateur des citations - P5 </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
 	<div id="container">
-		<h1>P5 - Générateur des citations</h1>
-	</div>
-	<!-- ETAPE 1 -->
-	<h2>Citations aléatoires</h2>
-	<button onclick="">Générer une citation</button>
-	<div id="randomQuotes-box">
-		<blockquote>
-			<p id="randomQuotes-text"></p>
-		</blockquote>
+		<div class="row m-3 jusitfy-content-between">
+			<div class="col">
+				<!-- ETAPE 1 -->
+				<p>Citations aléatoires</p>
+				<br>
+				<button class="btn btn-primary p-2" onclick="generatorRandomQuote()">Générer une citation</button>
+				<div>
+					<blockquote>
+						<p id="randomQuote"></p>
+					</blockquote>
+				</div>
+			</div>
+			<div class="col" style="display: none;">
+				<!-- ETAPE 2 -->
+				<p>Citations aléatoires multiples</p>
+				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
+				<div class="row">
+					<div class="col-12 mb-2 mt-2">
+						<select class="btn btn-outline-info p-2" id="listSelect">
+							<option>Sélectionnez le nombre</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>0</option>
+						</select>
+					</div>
+					<div class="col">
+						<button class="btn btn-info" onclick="">Générer des citations multiples</button>
+					</div>
+					<div class="col">
+						<button class="btn btn-outline-danger" onclick="">Quitter le programme</button>
+					</div>
+				</div>
+
+				<br>
+				<div class="col-12">
+					<blockquote>
+						<p id="multipleQuotes"></p>
+					</blockquote>
+				</div>
+			</div>
+		</div>
 	</div>
 
-	<!-- ETAPE 2 -->
-	<h2>Citations générées</h2>
-	<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
-	<select>
-		<option>1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5</option>
-	</select>
+	<script src="js/step1.1_randomQuote.js"></script>
 
-	<div id="configurableQuotes-box">
-		<blockquote>
-			<p id="configurableQuotes-text"></p>
-		</blockquote>
-	</div>
-	<br>
-	<button onclick="">Générer une citation</button>
-	<button onclick="">Quitter le programme</button>
+</body>
 
-<!--	<script src="step1/js/step1.0_randomQuotes.js"></script>-->
-	<script src="step1/js/step1.1_randomQuotes.js"></script>
-</body></html>
+</html>
