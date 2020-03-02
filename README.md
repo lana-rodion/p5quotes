@@ -51,7 +51,7 @@ Project JavaScript code
 * <https://www.grafikart.fr/formations/debuter-javascript>  
 
 * <https://openclassrooms.com/fr/courses/1631636-simplifiez-vos-developpements-javascript-avec-jquery/1631981-premiers-pas>
-
-* <https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/3514956-manipulez-les-formulaires>
   
+* <https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/3514956-manipulez-les-formulaires>
+    
 [![Maintainability](https://api.codeclimate.com/v1/badges/5438c41caa6341113227/maintainability)](https://codeclimate.com/github/lana-rodion/p5quotes/maintainability)
