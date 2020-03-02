@@ -55,4 +55,6 @@ Project JavaScript code
 - <https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0>   
 - <https://kangax.github.io/compat-table/es6/>   
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/5438c41caa6341113227/maintainability)](https://codeclimate.com/github/lana-rodion/p5quotes/maintainability)
+
 
