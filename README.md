@@ -2,7 +2,7 @@
 
 Front-end Developer Training / Openclassrooms
 
-## Descritpion
+## Description
 
 Project 5 - Imagine a quote generator. Generate Random Quotes & Configurable Quotes 
 
