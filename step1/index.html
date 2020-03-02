@@ -1,3 +1,4 @@
+<!-- Version step1.1 2020/03/02 -->
 <!DOCTYPE html>
 <html>
 
@@ -12,19 +13,22 @@
 <body>
 	<div id="container">
 		<div class="row m-3 jusitfy-content-between">
-			<div class="col">
-				<!-- ETAPE 1 -->
+			<!-- ETAPE 1 -->
+			<div class="col-6">
 				<p>Citations aléatoires</p>
 				<br>
-				<button class="btn btn-primary p-2" onclick="generatorRandomQuote()">Générer une citation</button>
-				<div>
+				<button class="btn btn-primary p-2 mb-2" onclick="generatorRandomQuote()">Générer une citation</button>
+				<div class="p-2 mt-2 mb-2 bg-light">
 					<blockquote>
-						<p id="randomQuote"></p>
+						<p id="randomQuoteZone" class="p-2">Citation générée : 
+							<br>
+						</p>
 					</blockquote>
 				</div>
 			</div>
-			<div class="col" style="display: none;">
-				<!-- ETAPE 2 -->
+			
+			<!-- ETAPE 2 -->
+			<!--<div class="col" style="display: none;">
 				<p>Citations aléatoires multiples</p>
 				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
 				<div class="row">
@@ -46,14 +50,13 @@
 						<button class="btn btn-outline-danger" onclick="">Quitter le programme</button>
 					</div>
 				</div>
-
 				<br>
 				<div class="col-12">
 					<blockquote>
 						<p id="multipleQuotes"></p>
 					</blockquote>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 
