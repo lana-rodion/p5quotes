@@ -1,3 +1,4 @@
+<!-- Version step2.0 2020/03/02 -->
 <!DOCTYPE html>
 <html>
 
@@ -12,45 +13,49 @@
 <body>
 	<div id="container">
 		<div class="row m-3 jusitfy-content-between">
-			<div class="col">
-				<!-- ETAPE 1 -->
+			<!-- ETAPE 1 -->
+			<div class="col-6">
 				<p>Citations aléatoires</p>
 				<br>
-				<button class="btn btn-primary p-2" onclick="generatorRandomQuote()">Générer une citation</button>
-				<div>
+				<button class="btn btn-primary p-2 mb-2" onclick="generatorRandomQuote()">Générer une citation</button>
+				<div class="p-2 mt-2 mb-2 bg-light">
 					<blockquote>
-						<p id="randomQuote"></p>
+						<p id="randomQuoteZone" class="p-2">Citation générée : 
+							<br>
+						</p>
 					</blockquote>
 				</div>
 			</div>
+			
+			<!-- ETAPE 2 -->
 			<div class="col" style="display: block;">
-				<!-- ETAPE 2 -->
 				<p>Citations aléatoires multiples</p>
 				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
 				<div class="row">
 					<div class="col-12 mb-2 mt-2">
 						<select class="btn btn-outline-info p-2" id="listSelect">
-							<option value="">Sélectionnez le nombre</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="0">Arrêter</option>
+							<option>Sélectionnez le nombre</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>0</option>
 						</select>
 					</div>
 					<div class="col">
-						<button class="btn btn-info" onclick="multiGenerator()">Générer des citations multiples</button>
+						<button class="btn btn-info" onclick="">Générer des citations multiples</button>
 					</div>
 					<div class="col">
-						<button class="btn btn-outline-danger" id="exitButton" onclick="exitGenerator()">Quitter le programme</button>
+						<button class="btn btn-outline-danger" onclick="">Quitter le programme</button>
 					</div>
 				</div>
-
 				<br>
-				<div class="col-12">
+				<div class="col-12 p-2 mt-2 mb-2 bg-light">
 					<blockquote>
-						<p id="multipleQuotes"></p>
+						<p id="multipleQuotes" class="p-2">Citation(s) générée(s) : 
+							<br>
+						</p>
 					</blockquote>
 				</div>
 			</div>
@@ -59,4 +64,6 @@
 
 	<script src="js/step2.0_multiQuotes.js"></script>
 
-</body></html>
+</body>
+
+</html>

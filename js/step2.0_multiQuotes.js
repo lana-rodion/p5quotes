@@ -1,3 +1,4 @@
+// Version step2.0 2020/03/02 
 /* 
 Step 2 - Configurable Quotes
 
@@ -7,10 +8,7 @@ Step 2 - Configurable Quotes
 
 */
 
-'use strict';
-
-var title = "Les phrases aléatoires et un peu absurdes : ";
-console.log(title);
+"use strict";
 
 //variable data is objet with 3 properties : [values in array]
 const data = {
@@ -43,6 +41,9 @@ const data = {
 	]
 };
 
+function getCapitalizeFirstLetter(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 // Create quote text from data
 function generatorRandomQuote() {
@@ -51,7 +52,7 @@ function generatorRandomQuote() {
 	var center = data.quotesCenter[Math.floor(Math.random() * data.quotesCenter.length)];
 	var finish = data.quotesFinish[Math.floor(Math.random() * data.quotesFinish.length)];
 
-	var phrase = start + " " + center + " " + finish + ".";
+	var phrase = getCapitalizeFirstLetter(start) + " " + center + " " + finish + ".";
 	console.log(phrase);
 }
 
@@ -72,6 +73,6 @@ function exitGenerator() {
 	document.getElementById('listSelect').options.length = 0;
 }
 
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener("DOMContentLoaded", function (e) {
 
 });
