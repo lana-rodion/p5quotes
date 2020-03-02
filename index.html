@@ -8,6 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Générateur des citations - P5 </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="icon" type="image/png" href="http://2.gravatar.com/avatar/7a582c7bf3c6a6a8ca0a9d9f36620fb7">
 </head>
 
 <body>
@@ -15,9 +16,10 @@
 		<div class="row m-3 jusitfy-content-between">
 			<!-- ETAPE 1 -->
 			<div class="col-6">
-				<p>Citations aléatoires</p>
+				<p>Citations aléatoires "Leader"</p>
 				<br>
 				<button class="btn btn-primary p-2 mb-2" onclick="generatorRandomQuote()">Générer une citation</button>
+				
 				<div class="p-2 mt-2 mb-2 bg-light">
 					<blockquote>
 						<p id="randomQuoteZone" class="p-2">Citation générée : 
@@ -29,7 +31,7 @@
 			
 			<!-- ETAPE 2 -->
 			<div class="col" style="display: block;">
-				<p>Citations aléatoires multiples</p>
+				<p>Citations aléatoires multiples "Temps et la vie"</p>
 				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
 				<div class="row">
 					<div class="col-12 mb-2 mt-2">
@@ -40,14 +42,13 @@
 							<option>3</option>
 							<option>4</option>
 							<option>5</option>
-							<option>0</option>
 						</select>
 					</div>
 					<div class="col">
-						<button class="btn btn-info" onclick="">Générer des citations multiples</button>
+						<button class="btn btn-info" onclick="multiGenerator()">Générer des citations multiples</button>
 					</div>
 					<div class="col">
-						<button class="btn btn-outline-danger" onclick="">Quitter le programme</button>
+						<button class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le programme</button>
 					</div>
 				</div>
 				<br>

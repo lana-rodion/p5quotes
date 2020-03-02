@@ -58,14 +58,9 @@ function generatorRandomQuote() {
 
 function multiGenerator() {
     let num = document.getElementById('listSelect').value;
-    if(num === 0) {
-        console.log("Pour générer des citations, merci de choisir un nombre.");
-		alert("Pour générer des citations, merci de choisir un nombre.");
-    } else {
-        for (let i = 0; i < num; i++) {
-            generatorRandomQuote();
-        }
-    }
+	for (let i = 0; i < num; i++) {
+		generatorRandomQuote();
+	}
 }
 
 function exitGenerator() {
