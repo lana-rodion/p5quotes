@@ -86,32 +86,39 @@ function generatorRandomQuote(data) {
 	let data2 = [];
 	let max = [];
 	let phrase = "";
-
+	
 
 	// return random text from data
 	/*var start = data1.quotesStart[Math.floor(Math.random() * data1.quotesStart.length)];
 	var center = data1.quotesCenter[Math.floor(Math.random() * data1.quotesCenter.length)];
 	var finish = data1.quotesFinish[Math.floor(Math.random() * data1.quotesFinish.length)];*/
 
-	phrase = getCapitalizeFirstLetter(start) + " " + center + " " + finish + ".";
+	//phrase = getCapitalizeFirstLetter(start) + " " + center + " " + finish + ".";
 	console.log(phrase);
 	//document.getElementById('randomQuoteZone').innerHTML = phrase;
 }
 
 function multiGenerator() {
-	let num = document.getElementById("listSelect").value;
-	if (num === 0) {
-		alert("Pour générer des citations, merci de choisir un nombre.");
+	let num1 = document.getElementById("listSelect1").value;
+	let num2 = document.getElementById("listSelect2").value;
+	
+	if (num1 === 0 || num2 === 0) {
+		alert("Pour générer des citations, merci de choisir un nombre plus que 0.");
+	} else if (num1 >=1 || num1 <= 5){
+		for (let i = 0; i < num1; i++) {
+			generatorRandomQuote(data1);
+		}
 	} else {
-		for (let i = 0; i < num; i++) {
-			generatorRandomQuote();
+		for (let i = 0; i < num2; i++) {
+			generatorRandomQuote(data2);
 		}
 	}
 }
 
 function exitGenerator() {
 	alert("Merci. Le générateur s'arrête là.\nRafraîchissez la page pour continuer.");
-	document.getElementById("listSelect").options.length = 0;
+	document.getElementById("listSelect1").options.length = 0;
+	document.getElementById("listSelect2").options.length = 0;
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
