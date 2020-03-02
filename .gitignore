@@ -19,13 +19,13 @@ _site\
 *.swo\
 *.swp\
 *.vi\
-*.xml\
 *.zip\
 *~\
 \
 # Editor folders\
 .cache\
 .idea\
+.idea/\
 .project\
 .settings\
 .tmproj\
