@@ -57,15 +57,15 @@ function generatorRandomQuote() {
 }
 
 function multiGenerator() {
-    let num = document.getElementById('listSelect').value;
+    let num = document.getElementById("listSelect").value;
 	for (let i = 0; i < num; i++) {
 		generatorRandomQuote();
 	}
 }
 
 function exitGenerator() {
-  	alert("Merci. Le générateur s'arrête là. \nRafraîchissez la page pour continuer.");
-	document.getElementById('listSelect').options.length = 0;
+  	alert("Merci. Le générateur s'arrête là.\nRafraîchissez la page pour continuer.");
+	document.getElementById("listSelect").options.length = 0;
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
