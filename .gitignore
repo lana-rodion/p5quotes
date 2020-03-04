@@ -26,6 +26,7 @@ _site\
 .cache\
 .idea\
 .idea/\
+.idea/*\
 .project\
 .settings\
 .tmproj\

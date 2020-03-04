@@ -10,7 +10,7 @@ Step 2 - Two types of configurable quotes generators
 
 "use strict";
 
-//variable data1 is objet with 3 properties : [values in array]
+//variable data1 is object with 3 properties : [values in array]
 const data1 = {
 	p1: [
 		"un leader amène",
@@ -76,44 +76,55 @@ function getCapitalizeFirstLetter(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function getRandomInt(max) {
+/*function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
-}
+}*/
 
 // Create quote text from data
-function generatorRandomQuote(data) {
-	let data1 = [];
-	let data2 = [];
-	let max = [];
-	let phrase = "";
-	
+function generatorRandomQuote() {
+	const space = " ";
+	const end = ".";
+	// data1 random elements
+	let part1 = data1.p1[Math.floor(Math.random() * data1.p1.length)];
+	let part2 = data1.p2[Math.floor(Math.random() * data1.p2.length)];
+	let part3 = data1.p3[Math.floor(Math.random() * data1.p3.length)];
+	let phrase1 = getCapitalizeFirstLetter(part1) + space + part2 + space + part3 + end;
 
+	// data2 random elements
+	let q1 = data2.q1[Math.floor(Math.random() * data2.q1.length)];
+	let q2 = data2.q2[Math.floor(Math.random() * data2.q2.length)];
+	let q3 = data2.q3[Math.floor(Math.random() * data2.q3.length)];
 	// return random text from data
-	/*var start = data1.quotesStart[Math.floor(Math.random() * data1.quotesStart.length)];
-	var center = data1.quotesCenter[Math.floor(Math.random() * data1.quotesCenter.length)];
-	var finish = data1.quotesFinish[Math.floor(Math.random() * data1.quotesFinish.length)];*/
-
-	//phrase = getCapitalizeFirstLetter(start) + " " + center + " " + finish + ".";
-	console.log(phrase);
-	//document.getElementById('randomQuoteZone').innerHTML = phrase;
+	let phrase2 = getCapitalizeFirstLetter(q1) + space + q2 + space + q3 + end;
+	console.log(phrase1);
 }
 
 function multiGenerator() {
 	let num1 = document.getElementById("listSelect1").value;
 	let num2 = document.getElementById("listSelect2").value;
-	
-	if (num1 === 0 || num2 === 0) {
-		alert("Pour générer des citations, merci de choisir un nombre plus que 0.");
-	} else if (num1 >=1 || num1 <= 5){
+	//let type1 = document.getElementById("type1");
+	//let type2 = document.getElementById("type2");
+
+	if (num1 !== 0) {
 		for (let i = 0; i < num1; i++) {
-			generatorRandomQuote(data1);
+			generatorRandomQuote();
 		}
 	} else {
 		for (let i = 0; i < num2; i++) {
-			generatorRandomQuote(data2);
+			generatorRandomQuote();
 		}
 	}
 }
+
+/*function displayPhrase () {
+	let type1 = document.getElementById("listSelect1");
+	let type2 = document.getElementById("listSelect2");
+	if (type1 === true) {
+		console.log(generatorRandomQuote(phrase1));
+	} else if (type2 === true){
+		console.log(generatorRandomQuote(phrase2));
+	}
+}*/
 
 function exitGenerator() {
 	alert("Merci. Le générateur s'arrête là.\nRafraîchissez la page pour continuer.");

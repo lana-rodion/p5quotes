@@ -20,9 +20,8 @@
 				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
 				<div class="row">
 					<div class="col-12 mb-2 mt-2">
-						<select class="btn btn-outline-info p-2" id="listSelect1">
-							<option value="">Sélectionnez le nombre</option>
-							<option value="0">0</option>
+						<select class="btn btn-outline-info" id="listSelect1">
+							<option value="">Sélectionnez le nombre de citations</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -31,32 +30,31 @@
 						</select>
 					</div>
 					<div class="col-auto mt-2 mb-2">
-						<button class="btn btn-primary" onclick="multiGenerator()">Générer des citations multiples</button>
+						<button id="type1" class="btn btn-primary" onclick="multiGenerator()">Générer des citations multiples</button>
 					</div>
 					<div class="col-auto mt-2 mb-2">
 						<button class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>
 					</div>
 				</div>
 				<br>
-				<div class="col-12 p-2 mt-2 mb-2 bg-light">
+				<!--<div class="col-12 p-2 mt-2 mb-2 bg-light">
 					<blockquote>
 						<p id="leadersQuotes" class="p-2">Citation(s) générée(s) :
 							<br>
 						</p>
 					</blockquote>
-				</div>
+				</div>-->
 			</div>
 
 
-			<!-- Generator type 1 -->
+			<!-- Generator type 2 -->
 			<div class="col" style="display: block;">
 				<p><strong>"Temps et la vie"</strong> - Citations aléatoires multiples</p>
 				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
 				<div class="row">
 					<div class="col-12 mb-2 mt-2">
-						<select class="btn btn-outline-info p-2" id="listSelect2">
-							<option value="">Sélectionnez le nombre</option>
-							<option value="0">0</option>
+						<select class="btn btn-outline-info" id="listSelect2">
+							<option value="">Sélectionnez le nombre de citations</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -65,20 +63,20 @@
 						</select>
 					</div>
 					<div class="col-auto mt-2 mb-2">
-						<button class="btn btn-info" onclick="multiGenerator()">Générer des citations multiples</button>
+						<button id="type2" class="btn btn-info" onclick="multiGenerator()">Générer des citations multiples</button>
 					</div>
 					<div class="col-auto mt-2 mb-2">
 						<button class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>
 					</div>
 				</div>
 				<br>
-				<div class="col-12 p-2 mt-2 mb-2 bg-light">
+				<!--<div class="col-12 p-2 mt-2 mb-2 bg-light">
 					<blockquote>
 						<p id="variousQuotes" class="p-2">Citation(s) générée(s) :
 							<br>
 						</p>
 					</blockquote>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>

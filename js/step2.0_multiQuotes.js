@@ -48,11 +48,11 @@ function getCapitalizeFirstLetter(str) {
 // Create quote text from data
 function generatorRandomQuote() {
 	// return random text from data
-	var start = data.quotesStart[Math.floor(Math.random() * data.quotesStart.length)];
-	var center = data.quotesCenter[Math.floor(Math.random() * data.quotesCenter.length)];
-	var finish = data.quotesFinish[Math.floor(Math.random() * data.quotesFinish.length)];
+	let start = data.quotesStart[Math.floor(Math.random() * data.quotesStart.length)];
+	let center = data.quotesCenter[Math.floor(Math.random() * data.quotesCenter.length)];
+	let finish = data.quotesFinish[Math.floor(Math.random() * data.quotesFinish.length)];
 
-	var phrase = getCapitalizeFirstLetter(start) + " " + center + " " + finish + ".";
+	let phrase = getCapitalizeFirstLetter(start) + " " + center + " " + finish + ".";
 	console.log(phrase);
 }
 
