@@ -1,10 +1,13 @@
-// Version step2.2 2020/03/09
+// Version step2 2020/03/09
 /*
 Step 2 - Two types of quotes generators
     0. Choose between 2 types of quotes generators (2 sets of sentences)
     1. If the type is selected, select the number of quotes (between 1 and 5) in select list
     2. Once the quotes are generated, offer to generate new citations or stop the program
-    3. If choice = 0 stop program, else choice = 1 program will be continued
+    3. The button "Quitter le générateur" to stop the program
+    =====================================================
+    4. TO DO:
+    Ask users if they want continue after the generation of selected number of quotes
 */
 
 "use strict";
