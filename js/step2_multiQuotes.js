@@ -1,18 +1,18 @@
-// Version step2.1 2020/03/02 
-/* 
-Step 2 - Two types of configurable quotes generators
-
-    Choose the number of citations generated (from 1 to 5)
-    Choose between 2 types of citation generators (to have 2 sets of sentences)
-    Once the citations are generated, offer to generate new citations or stop the program
-
+// Version step2.2 2020/03/09
+/*
+Step 2 - Two types of quotes generators
+    0. Choose between 2 types of quotes generators (2 sets of sentences)
+    1. If the type is selected, select the number of quotes (between 1 and 5) in select list
+    2. Once the quotes are generated, offer to generate new citations or stop the program
+    3. If choice = 0 stop program, else choice = 1 program will be continued
 */
 
 "use strict";
 
-//variable data1 is object with 3 properties : [values in array]
+//variables data1 and data2 are JavaScript Objects with 3 properties part1, part2, part3 inside
+// data1 called if the type1 is selected
 const data1 = {
-	p1: [
+	part1: [
 		"un leader amène",
 		"c’est difficile de diriger",
 		"diriger est l’art de faire faire",
@@ -21,7 +21,7 @@ const data1 = {
 		"je commence chaque journée",
 		"diriger est élever la vision"
 	],
-	p2: [
+	part2: [
 		"les gens",
 		"une charge de cavalerie",
 		"à quelqu’un d’autre quelque chose",
@@ -30,7 +30,7 @@ const data1 = {
 		"en me disant à moi-même",
 		"d’une personne plus haut"
 	],
-	p3: [
+	part3: [
 		"où ils veulent aller",
 		"si vous pensez que vous semblez bizarre sur un cheval",
 		"que vous voulez accompli, parce qu’il veut le faire",
@@ -41,18 +41,18 @@ const data1 = {
 	]
 };
 
-//variable data2 is objet with 3 properties : [values in array]
+//variable data2 is called if the type2 is selected
 const data2 = {
-	q1: [
+	part1: [
 		"il faut prendre le temps comme il vient,",
 		"qui veut triompher d'un obstacle",
 		"qu’une vie est heureuse",
 		"de toutes les sciences que l’homme peut et doit savoir,",
-		"l’homme qui a le plus vécu ",
+		"l’homme qui a le plus vécu",
 		"il y a si loin de la manière dont on vit de celle dont on devrait vivre,",
 		"perdre la vie est perdre le seul bien"
 	],
-	q2: [
+	part2: [
 		"les hommes pour ce qu'ils sont,",
 		"doit s'armer de la force du lion",
 		"quand elle commence par",
@@ -61,7 +61,7 @@ const data2 = {
 		"que celui qui tient pour réel et pour vrai ce qui devrait l’être sans doute,",
 		"que l'on ne pourra regretter d'avoir perdu"
 	],
-	q3: [
+	part3: [
 		"et l'argent pour ce qu'il vaut",
 		"et de la prudence du serpent",
 		"l’amour et finit par l’ambition",
@@ -72,66 +72,52 @@ const data2 = {
 	]
 };
 
+const space = " ";
+const end = ".";
+let phrase1 = "";
+let phrase2 = "";
+
+// Create the array with random integer inside to select random pieces of data
+function randomArray(array) {
+	return array[Math.floor(Math.random() * array.length)];
+}
+
+// Capitalize the first letter of the first word
 function getCapitalizeFirstLetter(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-/*function getRandomInt(max) {
-	return Math.floor(Math.random() * Math.floor(max));
-}*/
-
-// Create quote text from data
 function generatorRandomQuote() {
-	const space = " ";
-	const end = ".";
-	// data1 random elements
-	let part1 = data1.p1[Math.floor(Math.random() * data1.p1.length)];
-	let part2 = data1.p2[Math.floor(Math.random() * data1.p2.length)];
-	let part3 = data1.p3[Math.floor(Math.random() * data1.p3.length)];
-	let phrase1 = getCapitalizeFirstLetter(part1) + space + part2 + space + part3 + end;
-
-	// data2 random elements
-	let q1 = data2.q1[Math.floor(Math.random() * data2.q1.length)];
-	let q2 = data2.q2[Math.floor(Math.random() * data2.q2.length)];
-	let q3 = data2.q3[Math.floor(Math.random() * data2.q3.length)];
-	// return random text from data
-	let phrase2 = getCapitalizeFirstLetter(q1) + space + q2 + space + q3 + end;
-	console.log(phrase1);
+	phrase1 = getCapitalizeFirstLetter(randomArray(data1.part1)) + space + randomArray(data1.part2) + space + randomArray(data1.part3) + end;
+	//console.log("generatorRandomQuote", phrase1);
+	phrase2 = getCapitalizeFirstLetter(randomArray(data2.part1)) + space + randomArray(data2.part2) + space + randomArray(data2.part3) + end;
 }
 
 function multiGenerator() {
-	let num1 = document.getElementById("listSelect1").value;
-	let num2 = document.getElementById("listSelect2").value;
-	//let type1 = document.getElementById("type1");
-	//let type2 = document.getElementById("type2");
-
-	if (num1 !== 0) {
-		for (let i = 0; i < num1; i++) {
-			generatorRandomQuote();
+	//console.log('Thème "' + type + '" a été choisi.');
+	let theme1 = document.getElementById("Leaders").checked;
+	let theme2 = document.getElementById("Temps").checked;
+	let num = document.getElementById('listSelect').value;
+	if (theme1 === true) {
+		for (let i = 0; i < num; i++) {
+			generatorRandomQuote(phrase1);
+			console.log('Citation "Leaders" : ' + phrase1);
 		}
-	} else {
-		for (let i = 0; i < num2; i++) {
-			generatorRandomQuote();
+	}
+
+	if (theme2 === true) {
+		for (let i = 0; i < num; i++) {
+			generatorRandomQuote(phrase2);
+			console.log('Citation "Temps" : ' + phrase2);
 		}
 	}
 }
-
-/*function displayPhrase () {
-	let type1 = document.getElementById("listSelect1");
-	let type2 = document.getElementById("listSelect2");
-	if (type1 === true) {
-		console.log(generatorRandomQuote(phrase1));
-	} else if (type2 === true){
-		console.log(generatorRandomQuote(phrase2));
-	}
-}*/
 
 function exitGenerator() {
 	alert("Merci. Le générateur s'arrête là.\nRafraîchissez la page pour continuer.");
-	document.getElementById("listSelect1").options.length = 0;
-	document.getElementById("listSelect2").options.length = 0;
+	document.getElementById("listSelect").options.length = 0;
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
-
+	multiGenerator();
 });

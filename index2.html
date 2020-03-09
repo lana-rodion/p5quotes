@@ -1,4 +1,4 @@
-<!-- Version step2.1 2020/03/02 -->
+<!-- Version step2.2 2020/03/07 -->
 <!DOCTYPE html>
 <html>
 
@@ -7,81 +7,58 @@
 	<meta name="viewport" content="width = device-width, initial-scale = 1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Générateur des citations - P5 </title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
 	<link rel="icon" type="image/png" href="http://2.gravatar.com/avatar/7a582c7bf3c6a6a8ca0a9d9f36620fb7">
 </head>
 
 <body>
-	<div id="container">
-		<div class="row m-3 jusitfy-content-between">
-			<!-- Generator type 1 -->
-			<div class="col" style="display: block;">
-				<p><strong>"Leaders"</strong> - Citations aléatoires multiples </p>
-				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
-				<div class="row">
-					<div class="col-12 mb-2 mt-2">
-						<select class="btn btn-outline-info" id="listSelect1">
-							<option value="">Sélectionnez le nombre de citations</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-					</div>
-					<div class="col-auto mt-2 mb-2">
-						<button id="type1" class="btn btn-primary" onclick="multiGenerator()">Générer des citations multiples</button>
-					</div>
-					<div class="col-auto mt-2 mb-2">
-						<button class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>
-					</div>
-				</div>
-				<br>
-				<!--<div class="col-12 p-2 mt-2 mb-2 bg-light">
-					<blockquote>
-						<p id="leadersQuotes" class="p-2">Citation(s) générée(s) :
-							<br>
-						</p>
-					</blockquote>
-				</div>-->
-			</div>
+<div id="container" class="m-auto p-4">
+	<h1> Générateur des citations - P5 </h1>
+	<!-- Select the type of Generator -->
+	<h2>Faites votre choix&nbsp;!</h2>
+	<p>Vous pouvez choisir entre 2 collections de citations.</p>
+	<h3>Sélectionnez le thème</h3>
 
+	<form id="form" class="form-group mt-4 mb-4">
+		<div class="mt-2 mb-2">
+			<input class="" type="radio" name="typeGenerator" id="Leaders" value="Leaders">
+			<label class="" for="Leaders">
+				Thème&nbsp;: <strong>"Leaders"</strong>
+			</label>
+		</div>
+		<div class="mt-2 mb-2">
+			<input class="" type="radio" name="typeGenerator" id="Temps" value="Temps">
+			<label class="" for="Temps">
+				Thème&nbsp;: <strong>"Temps et la vie"</strong>
+			</label>
+		</div>
+		<br>
+		<input type="button" value="Rétablir les valeurs par défaut" onClick="this.form.reset();">
+	</form>
 
-			<!-- Generator type 2 -->
-			<div class="col" style="display: block;">
-				<p><strong>"Temps et la vie"</strong> - Citations aléatoires multiples</p>
-				<p>Sélectionnez le nombre de citations générées (de 1 à 5)</p>
-				<div class="row">
-					<div class="col-12 mb-2 mt-2">
-						<select class="btn btn-outline-info" id="listSelect2">
-							<option value="">Sélectionnez le nombre de citations</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-					</div>
-					<div class="col-auto mt-2 mb-2">
-						<button id="type2" class="btn btn-info" onclick="multiGenerator()">Générer des citations multiples</button>
-					</div>
-					<div class="col-auto mt-2 mb-2">
-						<button class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>
-					</div>
-				</div>
-				<br>
-				<!--<div class="col-12 p-2 mt-2 mb-2 bg-light">
-					<blockquote>
-						<p id="variousQuotes" class="p-2">Citation(s) générée(s) :
-							<br>
-						</p>
-					</blockquote>
-				</div>-->
-			</div>
+	<h3>Sélectionnez le nombre</h3>
+	<p>Le nombre des citations à générer de 1 à 5</p>
+	<div class="row">
+		<div class="col-auto mb-2 mt-2">
+			<select class="btn btn-outline-info" id="listSelect">
+				<option value="">Sélectionnez le nombre de citations</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+		<div class="col-auto mt-2 mb-2">
+			<button id="btnGenerator" class="btn btn-primary" onclick="multiGenerator()">Générer des citations</button>
+		</div>
+		<div class="col-12 col-sm-auto mt-2 justify-content-end">
+			<button id="btnExit" class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>
 		</div>
 	</div>
+</div>
 
-	<script src="js/step2.1_multiQuotes.js"></script>
+<script src="js/step2_multiQuotes.js"></script>
 
 </body>
 
