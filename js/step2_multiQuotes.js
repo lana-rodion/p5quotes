@@ -1,4 +1,4 @@
-// Version step2 2020/03/09
+// Version step2 2020/03/10
 /*
 Step 2 - Two types of quotes generators
     0. Choose between 2 types of quotes generators (2 sets of sentences)
@@ -7,7 +7,9 @@ Step 2 - Two types of quotes generators
     3. The button "Quitter le générateur" to stop the program
     =====================================================
     4. TO DO:
-    Ask users if they want continue after the generation of selected number of quotes
+    * Give users 2 possibilities:  or stop it
+      * continue the generation of quotes
+      * stop the generation of quotes and exit
 */
 
 "use strict";
@@ -77,8 +79,7 @@ const data2 = {
 
 const space = " ";
 const end = ".";
-let phrase1 = "";
-let phrase2 = "";
+let phrase = "";
 
 // Create the array with random integer inside to select random pieces of data
 function randomArray(array) {
@@ -90,29 +91,23 @@ function getCapitalizeFirstLetter(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// Create the phrase with 3 random quotes from data1 or data2
 function generatorRandomQuote() {
-	phrase1 = getCapitalizeFirstLetter(randomArray(data1.part1)) + space + randomArray(data1.part2) + space + randomArray(data1.part3) + end;
-	//console.log("generatorRandomQuote", phrase1);
-	phrase2 = getCapitalizeFirstLetter(randomArray(data2.part1)) + space + randomArray(data2.part2) + space + randomArray(data2.part3) + end;
+	let theme1 = document.getElementById("Leaders").checked;
+	//let theme2 = document.getElementById("Temps").checked;
+	if(theme1 === true){
+		phrase = getCapitalizeFirstLetter(randomArray(data1.part1)) + space + randomArray(data1.part2) + space + randomArray(data1.part3) + end;
+		console.log('Citation "Leaders" : ' + phrase);
+	} else {
+		phrase = getCapitalizeFirstLetter(randomArray(data2.part1)) + space + randomArray(data2.part2) + space + randomArray(data2.part3) + end;
+		console.log('Citation "Temps" : ' + phrase);
+	}
 }
 
 function multiGenerator() {
-	//console.log('Thème "' + type + '" a été choisi.');
-	let theme1 = document.getElementById("Leaders").checked;
-	let theme2 = document.getElementById("Temps").checked;
 	let num = document.getElementById('listSelect').value;
-	if (theme1 === true) {
-		for (let i = 0; i < num; i++) {
-			generatorRandomQuote(phrase1);
-			console.log('Citation "Leaders" : ' + phrase1);
-		}
-	}
-
-	if (theme2 === true) {
-		for (let i = 0; i < num; i++) {
-			generatorRandomQuote(phrase2);
-			console.log('Citation "Temps" : ' + phrase2);
-		}
+	for (let i = 0; i < num; i++) {
+		generatorRandomQuote();
 	}
 }
 
