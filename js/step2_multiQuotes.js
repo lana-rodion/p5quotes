@@ -97,15 +97,15 @@ function generatorRandomQuote() {
 	//let theme2 = document.getElementById("Temps").checked;
 	if(theme1 === true){
 		phrase = getCapitalizeFirstLetter(randomArray(data1.part1)) + space + randomArray(data1.part2) + space + randomArray(data1.part3) + end;
-		console.log('Citation "Leaders" : ' + phrase);
+		console.log("Citation 'Leaders' : " + phrase);
 	} else {
 		phrase = getCapitalizeFirstLetter(randomArray(data2.part1)) + space + randomArray(data2.part2) + space + randomArray(data2.part3) + end;
-		console.log('Citation "Temps" : ' + phrase);
+		console.log("Citation 'Temps' : " + phrase);
 	}
 }
 
 function multiGenerator() {
-	let num = document.getElementById('listSelect').value;
+	let num = document.getElementById("listSelect").value;
 	for (let i = 0; i < num; i++) {
 		generatorRandomQuote();
 	}
