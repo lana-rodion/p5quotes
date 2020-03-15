@@ -26,6 +26,7 @@ Project 5 - Imagine a quote generator. Generate Random Quotes & Configurable Quo
 *   Choose the number of citations generated (from 1 to 5)
 *   Choose between 2 types of citation generators (to have 2 sets of sentences)
 *   Once the citations are generated, offer to generate new citations or stop the program
+*   Do verification if theme or number of quotes are not selected
 
 ### Delivery
 
