@@ -1,4 +1,4 @@
-<!-- Version step2.2 2020/03/07 -->
+<!-- Version step2.2 2020/03/15 -->
 <!DOCTYPE html>
 <html>
 
@@ -16,11 +16,10 @@
 	<h1> Générateur des citations - P5 </h1>
 	<!-- Select the type of Generator -->
 	<h2>Faites votre choix&nbsp;!</h2>
-	<p>Vous pouvez choisir entre 2 collections de citations.</p>
-	<h3>Sélectionnez le thème</h3>
-
 	<form id="form" class="form-group mt-4 mb-4">
 		<div class="mt-2 mb-2">
+			<h3>Sélectionnez le thème</h3>
+			<p>Vous pouvez choisir entre 2 collections de citations.</p>
 			<input class="" type="radio" name="typeGenerator" id="Leaders" value="Leaders">
 			<label class="" for="Leaders">
 				Thème&nbsp;: <strong>"Leaders"</strong>
@@ -33,23 +32,23 @@
 			</label>
 		</div>
 		<br>
-		<input type="button" value="Rétablir les valeurs par défaut" onClick="this.form.reset();">
-	</form>
-
-	<h3>Sélectionnez le nombre</h3>
-	<p>Le nombre des citations à générer de 1 à 5</p>
-	<div class="row">
-		<div class="col-auto mb-2 mt-2">
-			<select class="btn btn-outline-info" id="listSelect">
-				<option value="">Sélectionnez le nombre de citations</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-			</select>
-		</div>
+		<h3>Sélectionnez le nombre</h3>
+		<p>Le nombre des citations à générer de 1 à 5</p>
+		<select class="btn btn-outline-info" id="listSelect">
+			<option value="">Sélectionnez le nombre de citations</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
 		<br>
+		<br>
+		<input type="button" value="Effacer le choix" onClick="this.form.reset();">
+	</form>
+	<p></p>
+	<br>
+	<div class="row">
 		<div class="col-auto mt-2 mb-2">
 			<button id="btnGenerator" class="btn btn-primary" onclick="multiGenerator()">Générer des citations</button>
 			<button id="btnExit" class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>

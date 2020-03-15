@@ -1,4 +1,4 @@
-// Version step2 2020/03/10
+// Version step2 2020/03/15
 /*
 Step 2 - Two types of quotes generators
     0. Choose between 2 types of quotes generators (2 sets of sentences)
@@ -7,9 +7,11 @@ Step 2 - Two types of quotes generators
     3. The button "Quitter le générateur" to stop the program
     =====================================================
     4. TO DO:
-    * Give users 2 possibilities:  or stop it
+    * Display question of choice once the number of quotes is generated
+    * Give users 2 possibilities:
       * continue the generation of quotes
       * stop the generation of quotes and exit
+    5. Conditions : alert if the theme is not selected
 */
 
 "use strict";
@@ -104,6 +106,24 @@ function generatorRandomQuote() {
 	}
 }
 
+// Disable submit button after one click
+/*function oneClickBtn() {
+	let num = document.getElementById("listSelect").value;
+	let btnGenerator = document.getElementById("btnGenerator");
+	if (num === false){
+		alert("Sélectionnez le nombre des citations.");
+		btnGenerator.disabled = true;
+	} else if (num === true){
+		btnGenerator.disabled = false;
+		btnGenerator.value="Générer des citations";
+	} else {
+		btnGenerator.disabled = true;
+		btnGenerator.value="Rafraîchissez la page pour continuer";
+	}
+}*/
+
+// || document.getElementsByName("typeGenerator") === false
+
 function multiGenerator() {
 	let num = document.getElementById("listSelect").value;
 	for (let i = 0; i < num; i++) {
@@ -112,7 +132,7 @@ function multiGenerator() {
 }
 
 function exitGenerator() {
-	alert("Merci. Le générateur s'arrête là.\nRafraîchissez la page pour continuer.");
+	alert("Merci.\nLe générateur s'arrête là.\nRafraîchissez la page pour continuer si vous avez changer d'avis.");
 	document.getElementById("listSelect").options.length = 0;
 }
 
