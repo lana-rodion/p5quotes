@@ -1,13 +1,14 @@
-// Version step2 2020/03/15
+// Version step2 2020/03/16
 /*
 Step 2 - Two types of quotes generators
     0. Choose between 2 types of quotes generators (2 sets of sentences)
     1. If the type is selected, select the number of quotes (between 1 and 5) in select list
     2. Once the quotes are generated, offer to generate new citations or stop the program
-    3. The button "Quitter le générateur" to stop the program
-    =====================================================
+    3. The button "Quitter le générateur" to stop the program and reset choices
+    ===========================================================================
     4. TO DO:
-    * Display question of choice once the number of quotes is generated
+    * Stop generator when the number of quotes is generated
+    * Display question of choice
     * Give users 2 possibilities:
       * continue the generation of quotes
       * stop the generation of quotes and exit
@@ -80,49 +81,46 @@ const data2 = {
 };
 
 const space = " ";
-const end = ".";
+const end = ".\n";
 let phrase = "";
 
-// Create the array with random integer inside to select random pieces of data
-function randomArray(array) {
-	return array[Math.floor(Math.random() * array.length)];
+class Quote {
+	constructor(part1, part2, part3) {
+		this.part1 = part1;
+		this.part2 = part2;
+		this.part3 = part3;
+	}
+	// Method composition() defines the structure of random quote
+	composition() {
+		return( getCapitalizeFirstLetter(randomArray(this.part1)) + space + randomArray(this.part2) + space + randomArray(this.part3) + end);
+	}
 }
+
+let phrase1 = new Quote(data1.part1, data1.part2, data1.part3);
+let phrase2 = new Quote(data2.part1, data2.part2, data2.part3);
 
 // Capitalize the first letter of the first word
 function getCapitalizeFirstLetter(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// Create the array with random integer inside to select random pieces of data
+function randomArray(array) {
+	return array[Math.floor(Math.random() * array.length)];
+}
+
 // Create the phrase with 3 random quotes from data1 or data2
-function generatorRandomQuote() {
+function generatorRandomQuote(array) {
 	let theme1 = document.getElementById("Leaders").checked;
 	//let theme2 = document.getElementById("Temps").checked;
 	if(theme1 === true){
-		phrase = getCapitalizeFirstLetter(randomArray(data1.part1)) + space + randomArray(data1.part2) + space + randomArray(data1.part3) + end;
+		phrase = phrase1.composition();
 		console.log("Citation 'Leaders' : " + phrase);
 	} else {
-		phrase = getCapitalizeFirstLetter(randomArray(data2.part1)) + space + randomArray(data2.part2) + space + randomArray(data2.part3) + end;
+		phrase = phrase2.composition();
 		console.log("Citation 'Temps' : " + phrase);
 	}
 }
-
-// Disable submit button after one click
-/*function oneClickBtn() {
-	let num = document.getElementById("listSelect").value;
-	let btnGenerator = document.getElementById("btnGenerator");
-	if (num === false){
-		alert("Sélectionnez le nombre des citations.");
-		btnGenerator.disabled = true;
-	} else if (num === true){
-		btnGenerator.disabled = false;
-		btnGenerator.value="Générer des citations";
-	} else {
-		btnGenerator.disabled = true;
-		btnGenerator.value="Rafraîchissez la page pour continuer";
-	}
-}*/
-
-// || document.getElementsByName("typeGenerator") === false
 
 function multiGenerator() {
 	let num = document.getElementById("listSelect").value;
