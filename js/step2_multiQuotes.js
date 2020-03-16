@@ -141,12 +141,7 @@ function finalProposition() {
 		btnGenerator.style.display = "none";
 		alert("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 		return console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
-	}
-	/*else if (isNaN(proposition)) {
-		alert("Ce n'est pas un chiffre.\nVeuillez rafraîchir la page pour continuer.");
-		btnGenerator.disabled = true;
-		return console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
-	}*/ else {
+	} else {
 		return console.log("Nombre incorrect.");
 	}
 }
@@ -156,7 +151,7 @@ function resetGenerator() {
 	finalProposition();
 }
 
-// Generate the number selected of random quotes and call finalProposition() on the end
+// Generate the number selected of random quotes and display quotes in html page
 function multiGenerator() {
 	let num = document.getElementById("listSelect").value;
 	if ((num >= 1) && (num <= 5)) {
