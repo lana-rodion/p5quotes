@@ -4,15 +4,13 @@ Step 2 - Two types of quotes generators
     0. Choose between 2 types of quotes generators (2 sets of sentences)
     1. If the type is selected, select the number of quotes (between 1 and 5) in select list
     2. Once the quotes are generated, offer to generate new citations or stop the program
-    3. The button "Quitter le générateur" to stop the program and reset choices
+    3. Display question of choice between "stop" and "continue" the program
+    4. The button "Quitter le générateur" to stop the program and reset choices
+    5. Alert if the format of choice  is not valid
     ===========================================================================
-    4. TO DO:
-    * Stop generator when the number of quotes is generated
-    * Display question of choice
-    * Give users 2 possibilities:
-      * continue the generation of quotes
-      * stop the generation of quotes and exit
-    5. Conditions : alert if the theme is not selected
+    TO DO:
+    * Insert random quotes in <p> and display them in browser screen
+    * Improve layout of generator
 */
 
 "use strict";
@@ -110,10 +108,10 @@ function randomArray(array) {
 }
 
 // Create the phrase with 3 random quotes from data1 or data2
-function generatorRandomQuote(array) {
-	let theme1 = document.getElementById("Leaders").checked;
+function generatorRandomQuote() {
+	let theme1 = document.getElementById("Leaders");
 	//let theme2 = document.getElementById("Temps").checked;
-	if(theme1 === true){
+	if(theme1.checked === true){
 		phrase = phrase1.composition();
 		console.log("Citation 'Leaders' : " + phrase);
 	} else {
@@ -122,15 +120,40 @@ function generatorRandomQuote(array) {
 	}
 }
 
-function multiGenerator() {
-	let num = document.getElementById("listSelect").value;
-	for (let i = 0; i < num; i++) {
-		generatorRandomQuote();
+// Display the propositions of choice on the end of program
+function finalProposition() {
+	let proposition = Number(prompt("Voulez-vous continuer ?\n0 : Je veux bien continuer.\n1 : Je m'arrête là."));
+	if (proposition === 0) {
+		alert("Faites votre nouveau choix !");
+		return console.log("Faites votre nouveau choix !");
+	} else if (proposition === 1) {
+		alert("Merci. Le générateur s'arrête là.\n\nÀ bientôt !");
+		let btnGenerator = document.getElementById("btnGenerator");
+		btnGenerator.disabled = true;
+		return console.log("Merci. Le générateur s'arrête là.\nÀ bientôt !");
+
+	} else if (isNaN(proposition)) {
+		alert("Merci de faire votre choix entre 0 et 1.");
+		return console.log("Merci de faire votre choix entre 0 et 1.");
+	} else {
+		alert("Nombre saisi est incorrect.");
+		return console.log("Nombre saisi est incorrect.");
 	}
 }
 
-function exitGenerator() {
-	alert("Merci.\nLe générateur s'arrête là.\nRafraîchissez la page pour continuer si vous avez changer d'avis.");
+// Generate the number selected of random quotes and call finalProposition() on the end
+function multiGenerator() {
+	let num = document.getElementById("listSelect").value;
+	if ((num > 0) && (num <= 5)) {
+		for (let i = 0; i < num; i++) {
+			generatorRandomQuote();
+		}
+		finalProposition();
+	}
+}
+
+function resetGenerator() {
+	alert("Merci de rafraîchir la page pour continuer");
 	document.getElementById("listSelect").options.length = 0;
 }
 

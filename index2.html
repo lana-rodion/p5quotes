@@ -20,7 +20,7 @@
 		<div class="mt-2 mb-2">
 			<h3>Sélectionnez le thème</h3>
 			<p>Vous pouvez choisir entre 2 collections de citations.</p>
-			<input class="" type="radio" name="typeGenerator" id="Leaders" value="Leaders">
+			<input class="" type="radio" name="typeGenerator" id="Leaders" value="Leaders" checked>
 			<label class="" for="Leaders">
 				Thème&nbsp;: <strong>"Leaders"</strong>
 			</label>
@@ -42,12 +42,12 @@
 			<option value="4">4 citations</option>
 			<option value="5">5 citations</option>
 		</select>
-		<input class="btn btn-outline-secondary" type="button" value="Effacer le choix" onClick="this.form.reset();">
+		<input class="btn btn-outline-secondary" type="reset" value="Effacer le choix">
 	</form>
 	<div class="row">
 		<div class="col-12 col-sm-auto mt-2 mb-2">
 			<button id="btnGenerator" class="btn btn-primary" onclick="multiGenerator()">Générer des citations</button>
-			<button id="btnExit" class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>
+			<button id="btnExit" class="btn btn-outline-danger" onclick="resetGenerator()">Réinitialiser le générateur</button>
 		</div>
 	</div>
 </div>
