@@ -120,24 +120,21 @@ function generatorRandomQuote() {
 	}
 }
 
+let btnGenerator = document.getElementById("btnGenerator");
+
 // Display the propositions of choice on the end of program
 function finalProposition() {
 	let proposition = Number(prompt("Voulez-vous continuer ?\n0 : Je veux bien continuer.\n1 : Je m'arrête là."));
 	if (proposition === 0) {
-		alert("Faites votre nouveau choix !");
 		return console.log("Faites votre nouveau choix !");
 	} else if (proposition === 1) {
-		alert("Merci. Le générateur s'arrête là.\n\nÀ bientôt !");
-		let btnGenerator = document.getElementById("btnGenerator");
+		alert("Merci. Le générateur s'arrête là.\nÀ bientôt !");
 		btnGenerator.disabled = true;
 		return console.log("Merci. Le générateur s'arrête là.\nÀ bientôt !");
-
-	} else if (isNaN(proposition)) {
-		alert("Merci de faire votre choix entre 0 et 1.");
-		return console.log("Merci de faire votre choix entre 0 et 1.");
 	} else {
-		alert("Nombre saisi est incorrect.");
-		return console.log("Nombre saisi est incorrect.");
+		alert("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
+		btnGenerator.disabled = true;
+		return console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	}
 }
 
@@ -153,8 +150,7 @@ function multiGenerator() {
 }
 
 function resetGenerator() {
-	alert("Merci de rafraîchir la page pour continuer");
-	document.getElementById("listSelect").options.length = 0;
+	btnGenerator.disabled = false;
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
