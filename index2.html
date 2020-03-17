@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width = device-width, initial-scale = 1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Générateur des citations - P5 </title>
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="icon" type="image/png" href="http://2.gravatar.com/avatar/7a582c7bf3c6a6a8ca0a9d9f36620fb7">
 </head>
 
@@ -16,11 +16,11 @@
 	<h1> Générateur des citations - P5 </h1>
 	<!-- Select the type of Generator -->
 	<h2>Faites votre choix&nbsp;!</h2>
-	<form id="form" class="form-group mt-4 mb-4">
+	<form id="form" name="selectForm" class="form-group mt-4 mb-4">
 		<div class="mt-2 mb-2">
 			<h3>Sélectionnez le thème</h3>
 			<p>Vous pouvez choisir entre 2 collections de citations.</p>
-			<input class="" type="radio" name="typeGenerator" id="Leaders" value="Leaders">
+			<input class="" type="radio" name="typeGenerator" id="Leaders" value="Leaders" checked>
 			<label class="" for="Leaders">
 				Thème&nbsp;: <strong>"Leaders"</strong>
 			</label>
@@ -33,26 +33,29 @@
 		</div>
 		<br>
 		<h3>Sélectionnez le nombre</h3>
-		<p>Le nombre des citations à générer de 1 à 5</p>
-		<select class="btn btn-outline-info" id="listSelect">
+		<label for = "listSelect">Le nombre des citations à générer de 1 à 5</label>
+		<br>
+		<select id = "listSelect" name = "listSelect" class="btn btn-outline-info">
 			<option value="">Sélectionnez le nombre de citations</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
+			<option value="1">1 citation</option>
+			<option value="2">2 citations</option>
+			<option value="3">3 citations</option>
+			<option value="4">4 citations</option>
+			<option value="5">5 citations</option>
 		</select>
-		<br>
-		<br>
-		<input type="button" value="Effacer le choix" onClick="this.form.reset();">
+		<input class="btn btn-outline-secondary" type="reset" value="Effacer le choix">
 	</form>
-	<p></p>
-	<br>
 	<div class="row">
-		<div class="col-auto mt-2 mb-2">
+		<div class="col-12 col-sm-auto">
 			<button id="btnGenerator" class="btn btn-primary" onclick="multiGenerator()">Générer des citations</button>
-			<button id="btnExit" class="btn btn-outline-danger" onclick="exitGenerator()">Quitter le générateur</button>
 		</div>
+		<div class="col-12 col-sm">
+			<button id="btnExit" class="btn btn-outline-danger" onclick="resetGenerator()">Réinitialiser le générateur</button>
+		</div>
+	</div>
+	<!-- Quotes Box -->
+	<div class="row">
+		<div id="quotesBox" class="col-10 p-3 m-3"></div>
 	</div>
 </div>
 
