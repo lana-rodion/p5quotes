@@ -90,8 +90,6 @@ function randomArray(array) {
 	return array[Math.floor(Math.random() * array.length)];
 }
 
-let phrase1 = new Quote(data1.part1, data1.part2, data1.part3);
-let phrase2 = new Quote(data2.part1, data2.part2, data2.part3);
 let theme1 = document.getElementById("Leaders");
 let theme2 = document.getElementById("Temps");
 
@@ -111,6 +109,9 @@ class Quote {
 		return( getCapitalizeFirstLetter(randomArray(this.part1)) + space + randomArray(this.part2) + space + randomArray(this.part3) + end);
 	}
 }
+
+let phrase1 = new Quote(data1.part1, data1.part2, data1.part3);
+let phrase2 = new Quote(data2.part1, data2.part2, data2.part3);
 
 // Create the phrase with 3 random quotes from data1 or data2
 function generatorRandomQuote() {
