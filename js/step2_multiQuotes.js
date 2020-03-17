@@ -84,6 +84,11 @@ const space = " ";
 const end = ".\n";
 let phrase = "";
 
+// Create the array with random integer inside to select random pieces of data
+function randomArray(array) {
+	return array[Math.floor(Math.random() * array.length)];
+}
+
 class Quote {
 	constructor(part1, part2, part3) {
 		this.part1 = part1;
@@ -104,11 +109,6 @@ let theme2 = document.getElementById("Temps");
 // Capitalize the first letter of the first word
 function getCapitalizeFirstLetter(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-// Create the array with random integer inside to select random pieces of data
-function randomArray(array) {
-	return array[Math.floor(Math.random() * array.length)];
 }
 
 // Create the phrase with 3 random quotes from data1 or data2
@@ -132,18 +132,18 @@ function finalProposition() {
 	if (proposition === 0) {
 		btnGenerator.disabled = false;
 		btnGenerator.style.display = "block";
-		return console.log("Faites votre choix !");
+		console.log("Faites votre choix !");
 	} else if (proposition === 1) {
 		btnGenerator.disabled = true;
 		alert("Merci. Le générateur s'arrête là.\n\nVeuillez rafraîchir la page si vous aviez changer d'avis.\n\nÀ bientôt !");
-		return console.log("Merci. Le générateur s'arrête là. À bientôt !");
+		console.log("Merci. Le générateur s'arrête là. À bientôt !");
 	} else if (isNaN(proposition) || proposition !== 0 || proposition !== 1) {
 		btnGenerator.disabled = true;
 		btnGenerator.style.display = "none";
 		alert("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
-		return console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
+		console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	} else {
-		return console.log("Nombre incorrect.");
+		console.log("Nombre incorrect.");
 	}
 }
 
