@@ -113,12 +113,13 @@ function randomArray(array) {
 
 // Create the phrase with 3 random quotes from data1 or data2
 function generatorRandomQuote() {
-	//let theme1 = document.getElementById("Leaders");
 	if(theme1.checked === true){
 		phrase = phrase1.composition();
+		document.getElementById("quotesBox").innerHTML += "<span>Citation&nbsp;</span>" + theme1.value + "&nbsp;: " + phrase + "</br>";
 		console.log("Citation 'Leaders' : " + phrase);
 	} else {
 		phrase = phrase2.composition();
+		document.getElementById("quotesBox").innerHTML += "<span>Citation&nbsp;</span>" + theme2.value + "&nbsp;: " + phrase + "</br>";
 		console.log("Citation 'Temps' : " + phrase);
 	}
 }
@@ -157,11 +158,6 @@ function multiGenerator() {
 	if ((num >= 1) && (num <= 5)) {
 		for (let i = 0; i < num; i++) {
 			generatorRandomQuote();
-			if(theme1.checked === true){
-				document.getElementById("quotesBox").innerHTML += (i+1) + "<span>. Citation&nbsp;</span>" + theme1.value + "&nbsp;: " + phrase + "</br>";
-			} else {
-				document.getElementById("quotesBox").innerHTML += (i+1) + "<span>. Citation&nbsp;</span>" + theme2.value + "&nbsp;: " + phrase + "</br>";
-			}
 		}
 	}
 }
