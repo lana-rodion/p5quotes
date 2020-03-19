@@ -1,4 +1,4 @@
-// Version step2 2020/03/16
+// Version step2.3 - 2020/03/19
 /*
 Step 2 - Two types of quotes generators
     0. Choose between 2 types of quotes generators (2 sets of sentences)
@@ -7,13 +7,13 @@ Step 2 - Two types of quotes generators
     3. Display question of choice between "stop" and "continue" the program
     4. The button "Quitter le générateur" to stop the program and reset choices
     5. Alert if the format of choice  is not valid
-    6. Insert random quotes in <div> of index.html and display them in browser screen
+    6. Insert random quotes in <div> of index2.html and display them in browser screen
+    7. Delete previous quotes when we exit
     =================================================================================
     TO DO:
     * Do a safe alternative to .innerHTML
     * Improve layout of generator
-    * Improve finalProposition()
-    * Delete previous quotes when we change the them
+    * Improve resetGenerator()
 */
 
 "use strict";
@@ -81,22 +81,18 @@ const data2 = {
 	]
 };
 
-const space = " ";
-const end = ".\n";
-let phrase = "";
-
 // Create the array with random integer inside to select random pieces of data
 function randomArray(array) {
 	return array[Math.floor(Math.random() * array.length)];
 }
 
-let theme1 = document.getElementById("Leaders");
-let theme2 = document.getElementById("Temps");
-
 // Capitalize the first letter of the first word
 function getCapitalizeFirstLetter(str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+const space = " ";
+const end = ".\n";
 
 class Quote {
 	constructor(part1, part2, part3) {
@@ -106,42 +102,50 @@ class Quote {
 	}
 	// Method composition() defines the structure of random quote
 	composition() {
-		return( getCapitalizeFirstLetter(randomArray(this.part1)) + space + randomArray(this.part2) + space + randomArray(this.part3) + end);
+		return (getCapitalizeFirstLetter(randomArray(this.part1)) + space + randomArray(this.part2) + space + randomArray(this.part3) + end);
 	}
 }
 
 let phrase1 = new Quote(data1.part1, data1.part2, data1.part3);
 let phrase2 = new Quote(data2.part1, data2.part2, data2.part3);
+let phrase = "";
+let theme1 = document.getElementById("Leaders");
+let theme2 = document.getElementById("Temps");
+
+const elem = document.getElementById("quotesBox");
+let btnGenerator = document.getElementById("btnGenerator");
+let btnExit = document.getElementById("btnExit");
 
 // Create the phrase with 3 random quotes from data1 or data2
 function generatorRandomQuote() {
+
 	if(theme1.checked === true){
 		phrase = phrase1.composition();
-		document.getElementById("quotesBox").innerHTML += "<span>Citation&nbsp;</span>" + theme1.value + "&nbsp;: " + phrase + "</br>";
+		elem.innerHTML += "<span>Citation&nbsp;</span>" + theme1.value + "&nbsp;: " + phrase + "</br>";
 		console.log("Citation 'Leaders' : " + phrase);
 	} else {
 		phrase = phrase2.composition();
-		document.getElementById("quotesBox").innerHTML += "<span>Citation&nbsp;</span>" + theme2.value + "&nbsp;: " + phrase + "</br>";
+		elem.innerHTML += "<span>Citation&nbsp;</span>" + theme2.value + "&nbsp;: " + phrase + "</br>";
 		console.log("Citation 'Temps' : " + phrase);
 	}
 }
 
-let btnGenerator = document.getElementById("btnGenerator");
-
 // Display the propositions of choice on the end of program
-function finalProposition() {
-	let proposition = Number(prompt("Que voulez-vous faire ?\n\n0 : Je veux bien continuer.\n\n1 : Je m'arrête là."));
-	if (proposition === 0) {
+function resetGenerator() {
+	let choice = Number(prompt("Que voulez-vous faire ?\n\n0 : Je veux bien continuer.\n\n1 : Je m'arrête là."));
+	if (choice === 0) {
 		btnGenerator.disabled = false;
-		btnGenerator.style.display = "block";
+		btnExit.textContent = "Réinitialiser ou arrêter ?";
 		console.log("Faites votre choix !");
-	} else if (proposition === 1) {
-		btnGenerator.disabled = true;
-		alert("Merci. Le générateur s'arrête là.\n\nVeuillez rafraîchir la page si vous aviez changer d'avis.\n\nÀ bientôt !");
+	} else if (choice === 1) {
+		// Delete HTML content in div #quotesBox
+		//elem.remove() - this function is experimental and not compatible with Internet Explorer
+		elem.parentNode.removeChild(elem);
+		btnExit.textContent = "Réinitialiser ?";
+		alert("Merci. Le générateur s'arrête là.\n\nÀ bientôt !");
 		console.log("Merci. Le générateur s'arrête là. À bientôt !");
-	} else if (isNaN(proposition) || proposition !== 0 || proposition !== 1) {
+	} else if (isNaN(choice) || choice !== 0 || choice !== 1) {
 		btnGenerator.disabled = true;
-		btnGenerator.style.display = "none";
 		alert("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 		console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	} else {
@@ -149,14 +153,10 @@ function finalProposition() {
 	}
 }
 
-function resetGenerator() {
-	btnGenerator.disabled = true;
-	finalProposition();
-}
-
 // Generate the number selected of random quotes and display quotes in html page
 function multiGenerator() {
 	let num = document.getElementById("listSelect").value;
+	btnGenerator.disabled = false;
 	if ((num >= 1) && (num <= 5)) {
 		for (let i = 0; i < num; i++) {
 			generatorRandomQuote();
