@@ -115,17 +115,19 @@ let theme2 = document.getElementById("Temps");
 const elem = document.getElementById("quotesBox");
 let btnGenerator = document.getElementById("btnGenerator");
 let btnExit = document.getElementById("btnExit");
+let quote;
 
 // Create the phrase with 3 random quotes from data1 or data2
 function generatorRandomQuote() {
-
 	if(theme1.checked === true){
 		phrase = phrase1.composition();
-		elem.innerHTML += "<span>Citation&nbsp;</span>" + theme1.value + "&nbsp;: " + phrase + "</br>";
+		quote = "<span>Citation&nbsp;</span>" + theme1.value + "&nbsp;: " + phrase + "</br>";
+		elem.innerHTML += quote;
 		console.log("Citation 'Leaders' : " + phrase);
 	} else {
 		phrase = phrase2.composition();
-		elem.innerHTML += "<span>Citation&nbsp;</span>" + theme2.value + "&nbsp;: " + phrase + "</br>";
+		quote = "<span>Citation&nbsp;</span>" + theme2.value + "&nbsp;: " + phrase + "</br>";
+		elem.innerHTML += quote;
 		console.log("Citation 'Temps' : " + phrase);
 	}
 }
