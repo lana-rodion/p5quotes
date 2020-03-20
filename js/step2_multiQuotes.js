@@ -114,7 +114,6 @@ let theme2 = document.getElementById("Temps");
 
 const elem = document.getElementById("quotesBox");
 let btnGenerator = document.getElementById("btnGenerator");
-let btnExit = document.getElementById("btnExit");
 let quote;
 
 // Create the phrase with 3 random quotes from data1 or data2
@@ -134,24 +133,24 @@ function generatorRandomQuote() {
 
 // Display the propositions of choice on the end of program
 function resetGenerator() {
-	let choice = Number(prompt("Que voulez-vous faire ?\n\n0 : Je veux bien continuer.\n\n1 : Je m'arrête là."));
+	let choice = Number(prompt("Que voulez-vous faire ? Merci de saisir un chiffre.\n\n0 : Je veux bien continuer.\n\n1 : Je m'arrête là."));
 	if (choice === 0) {
 		btnGenerator.disabled = false;
-		btnExit.textContent = "Réinitialiser ou arrêter ?";
 		console.log("Faites votre choix !");
 	} else if (choice === 1) {
 		// Delete HTML content in div #quotesBox
 		//elem.remove() - this function is experimental and not compatible with Internet Explorer
 		elem.parentNode.removeChild(elem);
-		btnExit.textContent = "Réinitialiser ?";
+		btnGenerator.style.display = "none";
 		alert("Merci. Le générateur s'arrête là.\n\nÀ bientôt !");
 		console.log("Merci. Le générateur s'arrête là. À bientôt !");
-	} else if (isNaN(choice) || choice !== 0 || choice !== 1) {
+	} else if (isNaN(choice)) {
 		btnGenerator.disabled = true;
 		alert("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 		console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	} else {
-		console.log("Nombre incorrect.");
+		alert("Nombre incorrect.\nVeuillez rafraîchir la page pour continuer.");
+		console.log("Nombre incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	}
 }
 
