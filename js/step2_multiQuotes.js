@@ -139,11 +139,11 @@ function showQuote() {
 function generatorRandomQuote() {
 	if(theme1.checked === true){
 		phrase = phrase1.composition();
-		console.log('Thème \" Leaders \" : ' + phrase);
+		console.log("Thème \" Leaders \" : " + phrase);
 		showQuote();
 	} else {
 		phrase = phrase2.composition();
-		console.log('Thème \" Temps \" : ' + phrase);
+		console.log("Thème \" Temps \" : " + phrase);
 		showQuote();
 	}
 }
@@ -156,7 +156,7 @@ function resetGenerator() {
 		console.log("Faites votre choix !");
 	} else if (choice === 1) {
 		// Delete HTML content
-		quoteTitle.parentNode.removeChild(quoteTitle);
+		//quoteTitle.parentNode.removeChild(quoteTitle);
 		quotesList.parentNode.removeChild(quotesList);
 		btnGenerator.disabled = true;
 		alert("Merci. Le générateur s'arrête là.\n\nRafraîchissez la page si vous aviez changer d'avis. À bientôt !");
