@@ -39,19 +39,18 @@ nav {
 }
 
 .quote-content {
-  max-height: 554px !important;
+  max-height: 554px;
   overflow-y: auto;
 }
 
 select {
-  height: 38px !important;
+  height: 38px;
 }
 
-/* Icons styles
--------------------------------------------------- */
+/* Icons styles */
 .social-icon a,
 .link-footer a {
-  color: rgb(220,220,220) !important;
+  color: rgb(220,220,220);
 }
 
 .social-icon ul,
@@ -86,8 +85,7 @@ select {
   padding: 0;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
+/* Sticky footer styles */
 .footer {
   position: absolute;
   bottom: 0;
@@ -108,7 +106,6 @@ select {
   body {
     padding-top: 3.5rem;
     padding-bottom: 0;
-    /* Margin bottom by footer height */
     margin-bottom: 20px;
   }
 
