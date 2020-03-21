@@ -110,45 +110,63 @@ let phrase1 = new Quote(data1.part1, data1.part2, data1.part3);
 let phrase2 = new Quote(data2.part1, data2.part2, data2.part3);
 let phrase = "";
 let theme1 = document.getElementById("Leaders");
-let theme2 = document.getElementById("Temps");
-
-const elem = document.getElementById("quotesBox");
+//let theme2 = document.getElementById("Temps");
+let quotesList = document.getElementById("quotesList");
+let quoteTitle = document.getElementById("quoteTitle");
 let btnGenerator = document.getElementById("btnGenerator");
-let quote;
+//let title = "";
 
-// Create the phrase with 3 random quotes from data1 or data2
+// Display quotes in html page
+function showQuote() {
+	let listLine = document.createElement("li");
+	let textQuote = document.createTextNode(phrase);
+	listLine.appendChild(textQuote);
+	quotesList.appendChild(listLine);
+}
+
+/*function titleTheme() {
+	let quotePara = document.createElement("p"); // Create a <p> node
+	if (theme1.checked === true){
+		title = document.createTextNode('Thème \" Leaders \" : ');
+	} else {
+		title = document.createTextNode('Thème \" Temps \" : ');
+	}
+	quotePara.appendChild(title); // Append the text to <p>
+	quoteTitle.appendChild(quotePara);
+}*/
+
+// Generate random quotes
 function generatorRandomQuote() {
 	if(theme1.checked === true){
 		phrase = phrase1.composition();
-		quote = "<span>Citation&nbsp;</span>" + theme1.value + "&nbsp;: " + phrase + "</br>";
-		elem.innerHTML += quote;
-		console.log("Citation 'Leaders' : " + phrase);
+		console.log('Thème \" Leaders \" : ' + phrase);
+		showQuote();
 	} else {
 		phrase = phrase2.composition();
-		quote = "<span>Citation&nbsp;</span>" + theme2.value + "&nbsp;: " + phrase + "</br>";
-		elem.innerHTML += quote;
-		console.log("Citation 'Temps' : " + phrase);
+		console.log('Thème \" Temps \" : ' + phrase);
+		showQuote();
 	}
 }
 
 // Display the propositions of choice on the end of program
 function resetGenerator() {
-	let choice = Number(prompt("Que voulez-vous faire ? Merci de saisir un chiffre.\n\n0 : Je veux bien continuer.\n\n1 : Je m'arrête là."));
+	let choice = Number(prompt("Que voulez-vous faire ? Merci de saisir un chiffre.\n\n0 : Je veux bien continuer.\n\n1 : Je m'arrête là.\n\nVous pouvez toujours revenir si vous aviez changer d'avis.\n\n"));
 	if (choice === 0) {
 		btnGenerator.disabled = false;
 		console.log("Faites votre choix !");
 	} else if (choice === 1) {
-		// Delete HTML content in div #quotesBox
-		//elem.remove() - this function is experimental and not compatible with Internet Explorer
-		elem.parentNode.removeChild(elem);
-		btnGenerator.style.display = "none";
-		alert("Merci. Le générateur s'arrête là.\n\nÀ bientôt !");
-		console.log("Merci. Le générateur s'arrête là. À bientôt !");
+		// Delete HTML content
+		quoteTitle.parentNode.removeChild(quoteTitle);
+		quotesList.parentNode.removeChild(quotesList);
+		btnGenerator.disabled = true;
+		alert("Merci. Le générateur s'arrête là.\n\nRafraîchissez la page si vous aviez changer d'avis. À bientôt !");
+		console.log("Merci. Le générateur s'arrête là.\n\nRafraîchissez la page si vous aviez changer d'avis. À bientôt !");
 	} else if (isNaN(choice)) {
 		btnGenerator.disabled = true;
 		alert("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 		console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	} else {
+		btnGenerator.disabled = true;
 		alert("Nombre incorrect.\nVeuillez rafraîchir la page pour continuer.");
 		console.log("Nombre incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	}
@@ -158,6 +176,7 @@ function resetGenerator() {
 function multiGenerator() {
 	let num = document.getElementById("listSelect").value;
 	btnGenerator.disabled = false;
+	//titleTheme();
 	if ((num >= 1) && (num <= 5)) {
 		for (let i = 0; i < num; i++) {
 			generatorRandomQuote();
@@ -167,4 +186,5 @@ function multiGenerator() {
 
 document.addEventListener("DOMContentLoaded", function (e) {
 	multiGenerator();
+
 });
