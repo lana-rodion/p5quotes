@@ -1,4 +1,4 @@
-// Version step2.3 - 2020/03/19
+// Version step2.4 - 2020/03/21
 /*
 Step 2 - Two types of quotes generators
     0. Choose between 2 types of quotes generators (2 sets of sentences)
@@ -9,17 +9,12 @@ Step 2 - Two types of quotes generators
     5. Alert if the format of choice  is not valid
     6. Insert random quotes in <div> of index2.html and display them in browser screen
     7. Delete previous quotes when we exit
-    =================================================================================
-    TO DO:
-    * Do a safe alternative to .innerHTML
-    * Improve layout of generator
-    * Improve resetGenerator()
 */
 
 "use strict";
 
 //variables data1 and data2 are JavaScript Objects with 3 properties part1, part2, part3 inside
-// data1 called if the type1 is selected
+// data1 called if the theme1 is selected
 const data1 = {
 	part1: [
 		"un leader amène",
@@ -50,7 +45,7 @@ const data1 = {
 	]
 };
 
-//variable data2 is called if the type2 is selected
+//variable data2 is called if the theme2 is selected
 const data2 = {
 	part1: [
 		"il faut prendre le temps comme il vient,",
@@ -81,7 +76,7 @@ const data2 = {
 	]
 };
 
-// Create the array with random integer inside to select random pieces of data
+// Create the array with random integer inside to select random index of data
 function randomArray(array) {
 	return array[Math.floor(Math.random() * array.length)];
 }
@@ -110,11 +105,8 @@ let phrase1 = new Quote(data1.part1, data1.part2, data1.part3);
 let phrase2 = new Quote(data2.part1, data2.part2, data2.part3);
 let phrase = "";
 let theme1 = document.getElementById("Leaders");
-//let theme2 = document.getElementById("Temps");
 let quotesList = document.getElementById("quotesList");
-let quoteTitle = document.getElementById("quoteTitle");
 let btnGenerator = document.getElementById("btnGenerator");
-//let title = "";
 
 // Display quotes in html page
 function showQuote() {
@@ -123,17 +115,6 @@ function showQuote() {
 	listLine.appendChild(textQuote);
 	quotesList.appendChild(listLine);
 }
-
-/*function titleTheme() {
-	let quotePara = document.createElement("p"); // Create a <p> node
-	if (theme1.checked === true){
-		title = document.createTextNode('Thème \" Leaders \" : ');
-	} else {
-		title = document.createTextNode('Thème \" Temps \" : ');
-	}
-	quotePara.appendChild(title); // Append the text to <p>
-	quoteTitle.appendChild(quotePara);
-}*/
 
 // Generate random quotes
 function generatorRandomQuote() {
@@ -156,7 +137,6 @@ function resetGenerator() {
 		console.log("Faites votre choix !");
 	} else if (choice === 1) {
 		// Delete HTML content
-		//quoteTitle.parentNode.removeChild(quoteTitle);
 		quotesList.parentNode.removeChild(quotesList);
 		btnGenerator.disabled = true;
 		alert("Merci. Le générateur s'arrête là.\n\nRafraîchissez la page si vous aviez changer d'avis. À bientôt !");
