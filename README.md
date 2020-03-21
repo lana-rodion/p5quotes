@@ -42,8 +42,11 @@ Project JavaScript code
 ### Tools
 
 *   Brackets Editor
+*   WebStorm
 *   Browser console window
 *   GitKraken
+*   Codacy
+*   Code Climate
 
 ## Sources
 
@@ -51,11 +54,9 @@ Project JavaScript code
 
 *   <https://www.grafikart.fr/formations/debuter-javascript>  
 
-*   <https://openclassrooms.com/fr/courses/1631636-simplifiez-vos-developpements-javascript-avec-jquery/1631981-premiers-pas>  
+*   <https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript>
 
-*   <https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/3514956-manipulez-les-formulaires>
-
-*   <https://openclassrooms.com/fr/courses/3306901-creez-des-pages-web-interactives-avec-javascript/3514956-manipulez-les-formulaires>
+*   <https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/>
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd7d7d36576b4f3ea4467961e4986768)](https://app.codacy.com/manual/lana-rodion/p5quotes?utm_source=github.com&utm_medium=referral&utm_content=lana-rodion/p5quotes&utm_campaign=Badge_Grade_Dashboard) 
 [![Maintainability](https://api.codeclimate.com/v1/badges/5438c41caa6341113227/maintainability)](https://codeclimate.com/github/lana-rodion/p5quotes/maintainability)
