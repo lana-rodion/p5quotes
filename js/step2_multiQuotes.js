@@ -12,8 +12,6 @@ Step 2 - Two types of quotes generators
     =======================================
     In JavaScript that is designed to be executed in the browser, it's considered a best practice to avoid using methods on console.
     Calls using console should be stripped before being pushed to production.
-    Examples of correct code for this rule "disallow the use of console (no-console)":
-    Console.log("Hello world!"); // custom console / eslint no-console: "error"
 */
 
 "use strict";
@@ -125,11 +123,11 @@ function showQuote() {
 function generatorRandomQuote() {
 	if(theme1.checked === true){
 		phrase = phrase1.composition();
-		Console.log("Thème \" Leaders \" : " + phrase);
+		console.log("Thème \" Leaders \" : " + phrase);
 		showQuote();
 	} else {
 		phrase = phrase2.composition();
-		Console.log("Thème \" Temps \" : " + phrase);
+		console.log("Thème \" Temps \" : " + phrase);
 		showQuote();
 	}
 }
@@ -139,21 +137,21 @@ function resetGenerator() {
 	let choice = Number(prompt("Que voulez-vous faire ? Merci de saisir un chiffre.\n\n0 : Je veux bien continuer.\n\n1 : Je m'arrête là.\n\nVous pouvez toujours revenir si vous aviez changer d'avis.\n\n"));
 	if (choice === 0) {
 		btnGenerator.disabled = false;
-		Console.log("Faites votre choix !");
+		console.log("Faites votre choix !");
 	} else if (choice === 1) {
 		// Delete HTML content
 		quotesList.parentNode.removeChild(quotesList);
 		btnGenerator.disabled = true;
 		alert("Merci. Le générateur s'arrête là.\n\nRafraîchissez la page si vous aviez changer d'avis. À bientôt !");
-		Console.log("Merci. Le générateur s'arrête là.\n\nRafraîchissez la page si vous aviez changer d'avis. À bientôt !");
+		console.log("Merci. Le générateur s'arrête là.\n\nRafraîchissez la page si vous aviez changer d'avis. À bientôt !");
 	} else if (isNaN(choice)) {
 		btnGenerator.disabled = true;
 		alert("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
-		Console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
+		console.log("Le choix saisi est incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	} else {
 		btnGenerator.disabled = true;
 		alert("Nombre incorrect.\nVeuillez rafraîchir la page pour continuer.");
-		Console.log("Nombre incorrect.\nVeuillez rafraîchir la page pour continuer.");
+		console.log("Nombre incorrect.\nVeuillez rafraîchir la page pour continuer.");
 	}
 }
 

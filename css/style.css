@@ -26,12 +26,19 @@ nav {
 }
 
 .text-grey_light {
- /*color: #DCDCDC;*/
   color: rgb(220,220,220);
 }
 
-#quotesBox h4 {
-  margin-top: 1.75em;
+h2 {
+  font-size: 1.7em;
+}
+
+.invitation {
+  font-size: 1.5em;
+}
+
+#quotesBox h2 {
+  margin-top: 1.5em;
 }
 
 .quotesBox {
@@ -39,15 +46,20 @@ nav {
 }
 
 .quote-content {
-  max-height: 554px;
+  max-height: 454px;
   overflow-y: auto;
+}
+
+label.list-select{
+  display: block;
+  width: 100%;
 }
 
 select {
   height: 38px;
 }
 
-/* Icons styles */
+/* == Icons styles == */
 .social-icon a,
 .link-footer a {
   color: rgb(220,220,220);
@@ -85,7 +97,7 @@ select {
   padding: 0;
 }
 
-/* Sticky footer styles */
+/* == Sticky footer styles == */
 .footer {
   position: absolute;
   bottom: 0;

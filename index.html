@@ -7,11 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <!-- Site meta tags -->
     <title> Générateur des citations - P5 </title>
     <meta name="desription" content="Project 5 - Generate random Quotes. The project is realized independently for the Front-end Developer Training / Openclassrooms.">
     <meta name="author" content="Sve ArtDev Web Designer &amp; Front-end Developer">
     <meta name="keywords" content="project5 random quotes generator javascript html css frontend">
+
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@publisher_handle">
@@ -21,6 +23,7 @@
     <meta name="twitter:creator" content="@author_handle">
     <!-- Twitter Summary card images must be at least 200x200px -->
     <meta name="twitter:image" content="http://www.example.com/image.jpg">
+
     <!-- Open Graph data -->
     <meta property="og:title" content="Random Quotes & Configurable Quotes Generator">
     <meta property="og:type" content="website">
@@ -28,17 +31,19 @@
     <meta property="og:image" content="http://example.com/image.jpg">
     <meta property="og:description" content="Project 5 - Generate Random Quotes & Configurable Quotes. The project is realized independently for the Front-end Developer Training / Openclassrooms.">
     <link rel="icon" type="image/png" href="http://2.gravatar.com/avatar/7a582c7bf3c6a6a8ca0a9d9f36620fb7.png">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-    <!-- FONTS -->
+    <!-- Fonts -->
     <script src="https://use.fontawesome.com/6f7f0b14f2.js"></script>
 </head>
 
 <body class="bg-dark">
+
+<!-- Fixed navbar -->
 <header>
-    <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Sve ArtDev</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,15 +77,15 @@
 
 <main class="container pb-4 pt-4">
     <h1 class="text-light"> Générateur de citations</h1>
-    <!-- Select the type of Generator -->
-    <h2 class="text-warning ml-4 mb-4">Faites votre choix&nbsp;!</h2>
+    <p class="text-warning ml-4 mb-4 invitation">Faites votre choix&nbsp;!</p>
 
+    <!-- Form Choice -->
     <div class="container bg-light">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-6">
-                <form id="form" name="selectForm" class="form-group ml-auto mt-2 mr-auto pt-4 pb-2 pr-2 pl-2 bg-light">
+                <form id="form" name="selectForm" class="form-group ml-auto mt-2 mr-auto mb-3 pt-4 pb-2 pr-2 pl-2 bg-light">
+                    <h2 class="mt-3 mb-3">Thème à choisir</h2>
                     <div class="mt-2 mb-2">
-                        <h3>Sélectionnez le thème</h3>
                         <p>Vous pouvez choisir entre 2 collections de citations.</p>
                         <input class="" type="radio" name="typeGenerator" id="Leaders" value="Leaders" checked>
                         <label class="" for="Leaders">
@@ -93,10 +98,10 @@
                             Thème&nbsp;: <strong>"Temps et la vie"</strong>
                         </label>
                     </div>
-                    <br>
-                    <h3>Sélectionnez le nombre</h3>
-                    <div class="row justify-content-between ml-auto mr-auto">
-                        <label for = "listSelect">Nombre de citations à générer de 1 à 5</label>
+
+                    <h2 class="mt-3 mb-3">Nombre de citations à générer</h2>
+                    <div class="row justify-content-between ml-auto mr-auto mt-2 mb-2">
+                        <label class="list-select" for = "listSelect">Nombre de citations à générer de 1 à 5</label>
                         <select id = "listSelect" name = "listSelect" class="btn btn-outline-info mb-2">
                             <option value="">Sélectionnez le nombre</option>
                             <option value="1">1 citation</option>
@@ -109,20 +114,24 @@
                     </div>
                 </form>
 
+                <!-- Action Buttons -->
                 <div class="row justify-content-between pl-4 pr-4 mb-4">
                     <button id="btnGenerator" class="btn btn-primary mb-2" onclick="multiGenerator()">Générer citations</button>
                     <button id="btnExit" class="btn btn-outline-danger mb-2" onclick="resetGenerator()">Que voulez-vous faire ?</button>
                 </div>
             </div>
+
             <!-- Quotes Box -->
-            <div id="quotesBox" class="col-12 col-sm-12 col-md-6 bg-info d-flex flex-wrap quotesBox">
-                <h4>Citations générées</h4>
-                <div class="ml-2 pb-2 quote-content">
-                    <ul id="quotesList" class="p-4 mt-2 mb-4"></ul>
+            <div id="quotesBox" class="col-12 col-sm-12 col-md-6 bg-info d-flex flex-wrap quotesBox align-items-start">
+                <h2>Citations générées</h2>
+                <div class="ml-2 pb-2 quote-content align-items-start">
+                    <ul id="quotesList" class="pl-4 pt-1 pr-4 mt-2 mb-4"></ul>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Validation badge -->
     <p class="text-center mt-4">
         <a href="http://jigsaw.w3.org/css-validator/check/referer">
             <img style="border:0;width:88px;height:31px"
@@ -132,6 +141,7 @@
     </p>
 </main>
 
+<!-- Footer -->
 <footer class="footer bg-secondary text-center">
     <div class="container">
         <div class="link-footer text-center">
@@ -151,7 +161,8 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<!-- Script quotes Generator -->
+
+<!-- Script for quotes Generator -->
 <script src="js/step2_multiQuotes.js"></script>
 
 </body>
