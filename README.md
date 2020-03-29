@@ -50,6 +50,10 @@ Project JavaScript code
 *   Codacy
 *   Code Climate
 
+## Extras
+
+![alt tag](https://user-images.githubusercontent.com/26404374/77855169-0ac49800-71ef-11ea-800d-bb95cf6d566e.png)
+
 ## Sources
 
 *   <https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript>
