@@ -15,7 +15,7 @@ Step 1.2 - Random quotes
 
 "use strict";
 
-//variable data is objet with 3 properties : [values in array]
+//variable data is object with 3 properties : [values in array]
 const data = {
     quotesStart: [
         "un leader amène",

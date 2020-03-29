@@ -113,6 +113,12 @@ select {
   padding-left: 15px;
 }
 
+.img-validator {
+  border: 0;
+  width: 88px;
+  height: 31px
+}
+
 /* == MEDIAS == */
 @media only screen and (max-width : 480px) {
   body {
