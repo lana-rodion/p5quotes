@@ -52,6 +52,10 @@ Project JavaScript code
 
 ## Extras
 
+*Generator User's interface on-line*
+
+<https://lana-rodion-artdev.com/oc-projets/p5-quotes/>
+
 ![alt tag](https://user-images.githubusercontent.com/26404374/77855169-0ac49800-71ef-11ea-800d-bb95cf6d566e.png)
 
 ## Sources
