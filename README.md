@@ -2,7 +2,7 @@
 
 Front-end Developer Training / Openclassrooms 
 
-Quotes Generator on-line <https://www.lana-rodion-artdev.com/oc-projets/p5-quotes/>
+Quotes Generator on-line <https://p5quotes.lana-rodion-artdev.com/>
 
 ## Description
 
