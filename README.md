@@ -56,7 +56,7 @@ Project JavaScript code
 
 <https://lana-rodion-artdev.com/oc-projets/p5-quotes/>
 
-![alt tag](https://user-images.githubusercontent.com/26404374/77855169-0ac49800-71ef-11ea-800d-bb95cf6d566e.png)
+![alt tag](https://user-images.githubusercontent.com/26404374/77901919-af42ea80-7280-11ea-893e-8e219100775f.png)
 
 ## Sources
 
